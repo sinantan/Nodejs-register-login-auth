@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    style.
+      #users {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      }
+      #users td,
+      #users th {
+      border: 1px solid #ddd;
+      }
+      #users tr:nth-child(even) {
+      background-color: #f2f2f2;
+      }
+      #users tr:hover {
+      background-color: #ddd;
+      }
+      #users th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+      }
+  body
+    - var user=kullanicilar;
+    table#users
+      tbody
+        tr
+          th nickname
+          th email
+          th password
+          th status
+        tr
+          each val in user
+            th= val.nickname
+            th= val.email
+            th= val.password
+            th
+              a(href='/admin/deleteUser/'+val.nickname) delete
+            tr
+        
+            
